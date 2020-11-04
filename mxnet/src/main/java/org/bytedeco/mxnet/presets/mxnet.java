@@ -83,16 +83,16 @@ public class mxnet implements LoadEnabled, InfoMapper {
             if (platform.startsWith("linux")) {
                 lib += lib.startsWith("cudnn") ? "@.8"
                      : lib.equals("nccl") ? "@.2"
-                     : lib.equals("cufft") || lib.equals("curand") || lib.equals("cusolver") ? "@.10"
+                     : lib.equals("cufft") || lib.equals("curand") ? "@.10"
                      : lib.equals("cudart") ? "@.11.0"
-                     : lib.equals("nvrtc") ? "@.11.0"
+                     : lib.equals("nvrtc") ? "@.11.1"
                      : "@.11";
             } else if (platform.startsWith("windows")) {
                 lib += lib.startsWith("cudnn") ? "64_8"
                      : lib.equals("nccl") ? "64_2"
-                     : lib.equals("cufft") || lib.equals("curand") || lib.equals("cusolver") ? "64_10"
+                     : lib.equals("cufft") || lib.equals("curand") ? "64_10"
                      : lib.equals("cudart") ? "64_110"
-                     : lib.equals("nvrtc") ? "64_110_0"
+                     : lib.equals("nvrtc") ? "64_111_0"
                      : "64_11";
             } else {
                 continue; // no CUDA

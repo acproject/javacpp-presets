@@ -764,7 +764,7 @@ diff -ruN tensorflow-1.15.3/tensorflow/stream_executor/platform/default/dso_load
  
  port::StatusOr<void*> GetCusolverDsoHandle() {
 -  return GetDsoHandle("cusolver", GetCudaLibVersion());
-+  return GetDsoHandle("cusolver", "10");
++  return GetDsoHandle("cusolver", "11");
  }
  
  port::StatusOr<void*> GetCusparseDsoHandle() {
